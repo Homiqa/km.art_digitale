@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { @apply antialiased text-gray-800; }
+.gradient {
+  background: radial-gradient(1200px 600px at 10% -20%, rgba(108,92,231,.20), transparent),
+              radial-gradient(1200px 600px at 90% -10%, rgba(0,217,255,.15), transparent);
+}

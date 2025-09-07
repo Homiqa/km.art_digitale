@@ -14,7 +14,7 @@ export default function Privacy() {
         <p className="mt-2 text-gray-700">Les données sont conservées jusqu'à suppression manuelle depuis le tableau de bord Supabase, ou sur demande.</p>
 
         <h2 className="mt-6 text-xl font-semibold">Droits</h2>
-        <p className="mt-2 text-gray-700">Vous pouvez demander l'accès, la rectification ou la suppression de vos données en contactant marielleadjalla[@]gmail.com.</p>
+        <p className="mt-2 text-gray-700">Vous pouvez demander l'accès, la rectification ou la suppression de vos données en contactant marielleadjalla@gmail.com.</p>
       </Container>
     </main>
   );

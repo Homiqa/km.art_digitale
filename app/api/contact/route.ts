@@ -13,26 +13,33 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "Missing fields" }, { status: 400 });
     }
 
+    // Insertion dans Supabase
     const { error } = await supabase.from("contacts").insert({ name, email, message });
     if (error) {
       console.error("Supabase insert error:", error);
       return NextResponse.json({ ok: false, error: "DB insert failed" }, { status: 500 });
     }
 
+    // Envoi de l'email via Resend
     try {
       if (process.env.RESEND_API_KEY && process.env.CONTACT_NOTIFY_TO) {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        await resend.emails.send({
-          from: "Contact <onboarding@resend.dev>", // ou ton domaine vérifié
+        const result = await resend.emails.send({
+          from: "Contact <onboarding@resend.dev>", // à remplacer par ton domaine vérifié
           to: process.env.CONTACT_NOTIFY_TO!,
           subject: "Nouveau message — km.art_digitale",
           text: `Nom: ${name}\nEmail: ${email}\n\n${message}`
         });
+
+        console.log("Email send result:", result);
+      } else {
+        console.warn("Resend API key or recipient email not set.");
       }
     } catch (e) {
       console.warn("Email notification failed:", e);
     }
 
+    // Redirection après soumission
     return NextResponse.redirect(new URL("/?sent=1", req.url), { status: 303 });
   } catch (e) {
     console.error("Contact route error:", e);

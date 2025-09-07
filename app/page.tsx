@@ -153,7 +153,7 @@ export default function Page() {
                 <button className="rounded-xl bg-brand px-6 py-3 text-white font-semibold hover:bg-brand-dark">Envoyer</button>
               </form>
 
-              <p className="mt-3 text-sm text-gray-500">Tes données sont stockées de façon sécurisée (Supabase) et ne sont pas revendues.</p>
+              <p className="mt-3 text-sm text-gray-500">Tes données sont stockées de façon sécurisée et ne sont pas revendues.</p>
             </div>
           </Container>
         </section>

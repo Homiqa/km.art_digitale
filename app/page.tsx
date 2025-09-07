@@ -83,58 +83,12 @@ export default function Page() {
               </p>
 
               <h3 className="mt-6 text-xl font-semibold">Mon parcours en bref</h3>
-              <div className="mt-3 space-y-4 text-gray-700">
-                {/* Safir Consulting */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-200 shadow">
-                    <Image
-                      src="/safir-consulting.png"
-                      alt="Safir Consulting"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
-                  <p>
-                    Community Manager — <strong>Safir Consulting</strong> (secteur bancaire) à Paris
-                  </p>
-                </div>
-
-                {/* Innoventhik Fashion */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-200 shadow">
-                    <Image
-                      src="/innovethik-fashion.png"
-                      alt="Innoventhik Fashion"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
-                  <p>
-                    Stage — Assistante Marketing Digital, <strong>Innoventhik Fashion</strong> (Fontainebleau)
-                  </p>
-                </div>
-
-                {/* Agence de l’Aviation Civile */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-200 shadow">
-                    <Image
-                      src="/aviation-civile.png"
-                      alt="Agence de l’Aviation Civile"
-                      width={48}
-                      height={48}
-                      className="object-cover"
-                    />
-                  </div>
-                  <p>
-                    Stage en communication — <strong>Agence de l’Aviation Civile du Bénin</strong>
-                  </p>
-                </div>
-
-                {/* Autre */}
-                <p>Formée en gestion de projets digitaux, branding et acquisition</p>
-              </div>
+              <ul className="mt-3 list-disc list-inside text-gray-700 space-y-1">
+                <li>Community Manager — Safir Consulting (secteur bancaire) à Paris</li>
+                <li>Stage — Assistante Marketing Digital, Innoventhik Fashion (Fontainebleau)</li>
+                <li>Stage en communication — Agence de l’Aviation Civile du Bénin</li>
+                <li>Formée en gestion de projets digitaux, branding et acquisition</li>
+              </ul>
 
               <h3 className="mt-6 text-xl font-semibold">Mes valeurs</h3>
               <p className="mt-2 text-gray-700">Authenticité – Collaboration – Innovation – Impact</p>

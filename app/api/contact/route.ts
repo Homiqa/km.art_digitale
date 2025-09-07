@@ -23,7 +23,7 @@ export async function POST(req: Request) {
       if (process.env.RESEND_API_KEY && process.env.CONTACT_NOTIFY_TO) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: "Contact <onboarding@resend.dev>",
+          from: "Contact <onboarding@resend.dev>", // ou ton domaine vérifié
           to: process.env.CONTACT_NOTIFY_TO!,
           subject: "Nouveau message — km.art_digitale",
           text: `Nom: ${name}\nEmail: ${email}\n\n${message}`

@@ -66,7 +66,7 @@ export default function Page() {
               <p className="mt-3 text-sm text-gray-500">Missions freelance • Alternance • Co-création de projets</p>
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white/70 backdrop-blur">
-              <Image src="/og.jpg" alt="km.art_digitale — visuel" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <Image src="/home.png" alt="km.art_digitale — visuel" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             </div>
           </div>
         </Container>

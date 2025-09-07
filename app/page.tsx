@@ -132,7 +132,7 @@ export default function Page() {
               <p className="mt-2 text-gray-600">Pour missions freelance, alternance, co-création de projets ou événements — contacte-moi :</p>
 
               <div className="mt-4 space-y-3 text-gray-700">
-                <p><strong>Email :</strong> <a href="mailto:marielleadjalla@gmail.com" className="text-brand hover:underline">marielleadjalla[@]gmail.com</a></p>
+                <p><strong>Email :</strong> <a href="mailto:marielleadjalla@gmail.com" className="text-brand hover:underline">marielleadjalla@gmail.com</a></p>
                 <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/marielle-adjalla-cdi-digital-marketing-seo" target="_blank" rel="noreferrer" className="text-brand hover:underline">/in/marielle-adjalla-cdi-digital-marketing-seo</a></p>
                 <p><strong>Instagram :</strong> <a href="https://www.instagram.com/km.art_digitale/" target="_blank" rel="noreferrer" className="text-brand hover:underline">@km.art_digitale</a></p>
               </div>

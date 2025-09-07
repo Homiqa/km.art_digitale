@@ -17,7 +17,7 @@ export default function CGU() {
         <p className="mt-2 text-gray-700">Le site n’est pas responsable des dommages liés à l’utilisation du contenu ou des liens externes.</p>
 
         <h2 className="mt-6 text-xl font-semibold">Contact</h2>
-        <p className="mt-2 text-gray-700">Pour toute question : marielleadjalla[@]gmail.com</p>
+        <p className="mt-2 text-gray-700">Pour toute question : marielleadjalla@gmail.com</p>
       </Container>
     </main>
   );

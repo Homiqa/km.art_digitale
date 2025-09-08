@@ -5,8 +5,7 @@ import Feature from "@/components/Feature";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import useSWR from "swr";
-import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import React from "react";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -16,25 +15,6 @@ function Testimonials() {
   if (!data) return <p className="text-center text-gray-500">Chargement...</p>;
 
   return (
-
-      {showConfirmation && (
-        <div className="animate-fade-in bg-green-100 text-green-800 p-4 rounded-lg mb-6 text-center shadow-md transition-opacity duration-500 flex items-center justify-center gap-2">
-          <span className="text-xl">✅</span>
-          <span>Merci ! Votre message a bien été envoyé.</span>
-        </div>
-      )}
-
-      {showError && (
-        <div className="animate-fade-in bg-red-100 text-red-800 p-4 rounded-lg mb-6 text-center shadow-md transition-opacity duration-500 flex items-center justify-center gap-2">
-          <span className="text-xl">❌</span>
-          <span>
-            {errorType === "missing_fields" && "Veuillez remplir tous les champs du formulaire."}
-            {errorType === "db_failed" && "Une erreur est survenue lors de l'enregistrement. Veuillez réessayer."}
-            {!["missing_fields", "db_failed"].includes(errorType) && "Une erreur inattendue est survenue."}
-          </span>
-        </div>
-      )}
-
     <section id="testimonials" className="py-20 bg-gradient-to-b from-white to-gray-50">
       <Container>
         <h2 className="text-3xl font-bold text-center">Ils me font confiance</h2>
@@ -66,25 +46,6 @@ function Testimonials() {
 
 export default function Page() {
   return (
-
-      {showConfirmation && (
-        <div className="animate-fade-in bg-green-100 text-green-800 p-4 rounded-lg mb-6 text-center shadow-md transition-opacity duration-500 flex items-center justify-center gap-2">
-          <span className="text-xl">✅</span>
-          <span>Merci ! Votre message a bien été envoyé.</span>
-        </div>
-      )}
-
-      {showError && (
-        <div className="animate-fade-in bg-red-100 text-red-800 p-4 rounded-lg mb-6 text-center shadow-md transition-opacity duration-500 flex items-center justify-center gap-2">
-          <span className="text-xl">❌</span>
-          <span>
-            {errorType === "missing_fields" && "Veuillez remplir tous les champs du formulaire."}
-            {errorType === "db_failed" && "Une erreur est survenue lors de l'enregistrement. Veuillez réessayer."}
-            {!["missing_fields", "db_failed"].includes(errorType) && "Une erreur inattendue est survenue."}
-          </span>
-        </div>
-      )}
-
     <>
       <header className="pt-16 pb-14">
         <Container>
@@ -202,21 +163,3 @@ export default function Page() {
     </>
   );
 }
-
-
-<style jsx>{`
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
-  }
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-  .animate-fade-out {
-    animation: fadeOut 0.6s ease-in;
-  }
-`}</style>

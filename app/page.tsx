@@ -1,14 +1,11 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
-
 import Image from "next/image";
 import CTA from "@/components/CTA";
 import Feature from "@/components/Feature";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
 import useSWR from "swr";
-import React from "react";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
@@ -48,36 +45,6 @@ function Testimonials() {
 }
 
 export default function Page() {
-  const [formStatus, setFormStatus] = useState<"success" | "error" | null>(null);
-  const [showMessage, setShowMessage] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-      });
-
-      if (response.ok) {
-        setFormStatus("success");
-        form.reset();
-      } else {
-        setFormStatus("error");
-      }
-    } catch (error) {
-      setFormStatus("error");
-    }
-
-    setShowMessage(true);
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 5000);
-  };
-
   return (
     <>
       <header className="pt-16 pb-14">
@@ -170,7 +137,7 @@ export default function Page() {
                 <p><strong>Instagram :</strong> <a href="https://www.instagram.com/km.art_digitale/" target="_blank" rel="noreferrer" className="text-brand hover:underline">@km.art_digitale</a></p>
               </div>
 
-              <form method="post" action="/api/contact" className="mt-6 space-y-4" onSubmit={handleSubmit}>
+              <form method="post" action="/api/contact" className="mt-6 space-y-4">
                 <div>
                   <label className="block text-sm font-medium">Nom</label>
                   <input name="name" required className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
@@ -184,14 +151,7 @@ export default function Page() {
                   <textarea name="message" rows={5} required className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand"></textarea>
                 </div>
                 <button className="rounded-xl bg-brand px-6 py-3 text-white font-semibold hover:bg-brand-dark">Envoyer</button>
-              
-{showMessage && (
-  <div className={`transition-opacity duration-1000 ${formStatus === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"} p-4 rounded-xl mt-4 ${!showMessage ? "opacity-0" : "opacity-100"}`}>
-    {formStatus === "success" ? "Message envoyé avec succès !" : "Échec de l'envoi du message."}
-  </div>
-)}
-
-</form>
+              </form>
 
               <p className="mt-3 text-sm text-gray-500">Tes données sont stockées de façon sécurisée et ne sont pas revendues.</p>
             </div>

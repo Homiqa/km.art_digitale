@@ -167,7 +167,7 @@ export default function Page() {
                 <p><strong>Instagram :</strong> <a href="https://www.instagram.com/km.art_digitale/" target="_blank" rel="noreferrer" className="text-brand hover:underline">@km.art_digitale</a></p>
               </div>
 
-              <form method="post" action="/api/contact" className="mt-6 space-y-4"> onSubmit={handleSubmit}
+              <form method="post" action="/api/contact" onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
                   <label className="block text-sm font-medium">Nom</label>
                   <input name="name" required className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
@@ -182,17 +182,17 @@ export default function Page() {
                 </div>
                 <button className="rounded-xl bg-brand px-6 py-3 text-white font-semibold hover:bg-brand-dark">Envoyer</button>
               
-{showMessage && (
-  <div
-    className={`transition-opacity duration-1000 ${
-      formStatus === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-    } p-4 rounded-xl mt-4 ${!showMessage ? "opacity-0" : "opacity-100"}`}
-  >
-    {formStatus === "success"
-      ? "Message envoyé avec succès !"
-      : "Échec de l'envoi du message."}
-  </div>
-)}
+          {showMessage && (
+            <div
+              className={`transition-opacity duration-1000 ${
+                formStatus === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+              } p-4 rounded-xl mt-4 ${!showMessage ? "opacity-0" : "opacity-100"}`}
+            >
+              {formStatus === "success"
+                ? "Message envoyé avec succès !"
+                : "Échec de l'envoi du message."}
+            </div>
+          )}
 
 </form>
 
